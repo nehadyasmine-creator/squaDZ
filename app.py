@@ -1,9 +1,17 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from rag_engine import generer_reponse_rag
 from vector_db import chercher_documents_epf
 
 app = FastAPI(title="EPF RAG API", version="1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],
+    allow_methods=["POST"],
+    allow_headers=["Content-Type"],
+)
 
 class QueryRequest(BaseModel):
     question: str
