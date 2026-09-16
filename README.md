@@ -8,7 +8,7 @@ Ce projet a été réalisé dans le cadre du hackathon EPF. Il combine :
 - le modèle **GLM-5.3-Flash** de Z.AI pour générer les réponses ;
 - une documentation Swagger directement accessible depuis l'API.
 
-## Lancer la partie Backend & IA
+## 1. La partie Backend & IA
 
 ### 1. Installer les dépendances
 
@@ -17,8 +17,12 @@ Depuis la racine du projet :
 ```bash
 pip install -r requirements.txt
 ```
+### 2. Créer fichier .env
 
-### 2. Lancer l'API
+Créer un fichier .env
+Mettre dedans : ZAI_API_KEY=cle api presente dans le google doc
+
+### 3. Lancer l'API
 
 ```bash
 uvicorn app:app --reload
